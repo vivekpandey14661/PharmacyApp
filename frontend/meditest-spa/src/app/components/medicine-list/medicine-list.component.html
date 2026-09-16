@@ -1,0 +1,48 @@
+<div class="list-panel">
+  <div class="toolbar">
+    <input
+      type="text"
+      class="search-box"
+      placeholder="Search by name, brand or notes..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange($event)"
+    />
+    <div class="legend">
+      <span class="legend-swatch legend-expiring"></span> Expiring &lt; 30 days
+      <span class="legend-swatch legend-low-stock"></span> Low stock &lt; 10
+    </div>
+  </div>
+
+  <p *ngIf="loading" class="status-text">Loading medicines...</p>
+  <p *ngIf="errorMessage" class="status-text error-text">{{ errorMessage }}</p>
+
+  <table class="medicine-grid" *ngIf="!loading && !errorMessage">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Brand</th>
+        <th>Expiry Date</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medicine of medicines" [class]="rowClass(medicine)">
+        <td>{{ medicine.fullName }}</td>
+        <td>{{ medicine.brand }}</td>
+        <td>{{ medicine.expiryDate | date: 'mediumDate' }}</td>
+        <td>{{ medicine.quantity }}</td>
+        <td>{{ medicine.price | number: '1.2-2' }}</td>
+        <td>
+          <button type="button" class="sell-btn" (click)="sell(medicine)" [disabled]="medicine.quantity === 0">
+            Record Sale
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="medicines.length === 0">
+        <td colspan="6" class="status-text">No medicines found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

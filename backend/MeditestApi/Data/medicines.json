@@ -1,0 +1,38 @@
+[
+  {
+    "id": "5f4a1c8a-1111-4a2b-8c3d-000000000001",
+    "fullName": "Paracetamol 500mg",
+    "notes": "Take after meals. Store below 25C.",
+    "expiryDate": "2026-10-05T00:00:00",
+    "quantity": 150,
+    "price": 25.50,
+    "brand": "Cipla"
+  },
+  {
+    "id": "5f4a1c8a-1111-4a2b-8c3d-000000000002",
+    "fullName": "Amoxicillin 250mg",
+    "notes": "Antibiotic - complete full course.",
+    "expiryDate": "2026-09-25T00:00:00",
+    "quantity": 8,
+    "price": 85.00,
+    "brand": "Sun Pharma"
+  },
+  {
+    "id": "5f4a1c8a-1111-4a2b-8c3d-000000000003",
+    "fullName": "Cetirizine 10mg",
+    "notes": "Anti-allergic, may cause drowsiness.",
+    "expiryDate": "2027-03-15T00:00:00",
+    "quantity": 60,
+    "price": 12.75,
+    "brand": "Dr. Reddy's"
+  },
+  {
+    "id": "5f4a1c8a-1111-4a2b-8c3d-000000000004",
+    "fullName": "Insulin Glargine",
+    "notes": "Keep refrigerated 2-8C.",
+    "expiryDate": "2026-10-01T00:00:00",
+    "quantity": 5,
+    "price": 650.00,
+    "brand": "Sanofi"
+  }
+]

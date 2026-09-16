@@ -1,0 +1,103 @@
+.sale-dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.sale-dialog-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  width: 320px;
+}
+
+.sale-dialog-card h3 {
+  margin-top: 0;
+}
+
+.stock-line {
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.sale-dialog-card label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.sale-dialog-card input {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.cancel-btn {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #2f4858;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #b02a37;
+  font-size: 0.8rem;
+}
+
+.sales-history {
+  margin-top: 2rem;
+}
+
+.sales-grid {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.sales-grid th,
+.sales-grid td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.sales-grid th {
+  background-color: #445b6e;
+  color: #fff;
+}
+
+.status-text {
+  text-align: center;
+  color: #555;
+  padding: 0.8rem;
+}

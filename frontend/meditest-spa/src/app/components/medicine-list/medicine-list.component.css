@@ -1,0 +1,96 @@
+.list-panel {
+  margin-top: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 280px;
+  font-size: 0.95rem;
+}
+
+.legend {
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  margin-left: 0.75rem;
+}
+
+.legend-expiring {
+  background-color: #f8d7da;
+}
+
+.legend-low-stock {
+  background-color: #fff3cd;
+}
+
+.medicine-grid {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.medicine-grid th,
+.medicine-grid td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.medicine-grid th {
+  background-color: #2f4858;
+  color: #fff;
+  font-weight: 600;
+}
+
+.row-expiring {
+  background-color: #f8d7da; /* red - expiry < 30 days */
+}
+
+.row-low-stock {
+  background-color: #fff3cd; /* yellow - quantity < 10 */
+}
+
+.sell-btn {
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #2f4858;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.sell-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.status-text {
+  padding: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+.error-text {
+  color: #b02a37;
+}

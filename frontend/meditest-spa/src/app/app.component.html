@@ -1,0 +1,26 @@
+<header class="app-header">
+  <h1>ABC Meditest</h1>
+  <nav class="tabs">
+    <button type="button" [class.active]="activeTab === 'list'" (click)="setTab('list')">Medicines</button>
+    <button type="button" [class.active]="activeTab === 'add'" (click)="setTab('add')">Add Medicine</button>
+  </nav>
+</header>
+
+<main class="app-main">
+  <section *ngIf="activeTab === 'list'">
+    <app-medicine-list [refreshTrigger]="refreshTrigger" (sellRequested)="onSellRequested($event)"></app-medicine-list>
+  </section>
+
+  <section *ngIf="activeTab === 'add'">
+    <app-add-medicine (medicineAdded)="onMedicineAdded()"></app-add-medicine>
+  </section>
+
+  <section>
+    <app-sales
+      [medicineToSell]="medicineToSell"
+      [refreshTrigger]="refreshTrigger"
+      (saleRecorded)="onSaleRecorded()"
+      (cancelled)="onSaleCancelled()"
+    ></app-sales>
+  </section>
+</main>

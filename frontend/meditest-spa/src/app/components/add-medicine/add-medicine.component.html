@@ -1,0 +1,79 @@
+<form class="add-form" #medicineForm="ngForm" (ngSubmit)="submit(medicineForm)">
+  <h3>Add Medicine</h3>
+
+  <div class="form-row">
+    <label for="fullName">Full Name *</label>
+    <input
+      id="fullName"
+      name="fullName"
+      type="text"
+      required
+      [(ngModel)]="model.fullName"
+      #fullName="ngModel"
+    />
+    <span class="field-error" *ngIf="fullName.invalid && fullName.touched">Full name is required.</span>
+  </div>
+
+  <div class="form-row">
+    <label for="brand">Brand *</label>
+    <input id="brand" name="brand" type="text" required [(ngModel)]="model.brand" #brand="ngModel" />
+    <span class="field-error" *ngIf="brand.invalid && brand.touched">Brand is required.</span>
+  </div>
+
+  <div class="form-row two-col">
+    <div>
+      <label for="expiryDate">Expiry Date *</label>
+      <input
+        id="expiryDate"
+        name="expiryDate"
+        type="date"
+        required
+        [(ngModel)]="model.expiryDate"
+        #expiryDate="ngModel"
+      />
+      <span class="field-error" *ngIf="expiryDate.invalid && expiryDate.touched">Expiry date is required.</span>
+    </div>
+
+    <div>
+      <label for="quantity">Quantity *</label>
+      <input
+        id="quantity"
+        name="quantity"
+        type="number"
+        min="0"
+        step="1"
+        required
+        [(ngModel)]="model.quantity"
+        #quantity="ngModel"
+      />
+      <span class="field-error" *ngIf="quantity.invalid && quantity.touched">Enter a valid quantity (0 or more).</span>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="price">Price (₹) *</label>
+    <input
+      id="price"
+      name="price"
+      type="number"
+      min="0"
+      step="0.01"
+      required
+      [(ngModel)]="model.price"
+      #price="ngModel"
+    />
+    <span class="field-error" *ngIf="price.invalid && price.touched">Enter a valid price (0 or more).</span>
+  </div>
+
+  <div class="form-row">
+    <label for="notes">Notes</label>
+    <textarea id="notes" name="notes" rows="2" [(ngModel)]="model.notes"></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn" [disabled]="medicineForm.invalid || submitting">
+    {{ submitting ? 'Saving...' : 'Add Medicine' }}
+  </button>
+
+  <p class="success-text" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+</form>

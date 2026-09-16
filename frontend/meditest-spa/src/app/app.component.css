@@ -1,0 +1,36 @@
+.app-header {
+  background-color: #2f4858;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.tabs button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  padding: 0.45rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background-color: #fff;
+  color: #2f4858;
+  font-weight: 600;
+}
+
+.app-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
+}

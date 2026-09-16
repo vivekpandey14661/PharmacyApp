@@ -1,0 +1,45 @@
+<div class="sale-dialog" *ngIf="medicineToSell as medicine">
+  <div class="sale-dialog-card">
+    <h3>Record Sale — {{ medicine.fullName }}</h3>
+    <p class="stock-line">In stock: {{ medicine.quantity }} &middot; Price: ₹{{ medicine.price | number: '1.2-2' }}</p>
+
+    <label for="qty">Quantity sold</label>
+    <input id="qty" type="number" min="1" [max]="medicine.quantity" [(ngModel)]="quantityToSell" name="qty" />
+
+    <p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="dialog-actions">
+      <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+      <button type="button" class="confirm-btn" [disabled]="submitting" (click)="confirmSale()">
+        {{ submitting ? 'Recording...' : 'Confirm Sale' }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="sales-history">
+  <h3>Sale Records</h3>
+  <table class="sales-grid">
+    <thead>
+      <tr>
+        <th>Medicine</th>
+        <th>Qty Sold</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.medicineName }}</td>
+        <td>{{ sale.quantitySold }}</td>
+        <td>{{ sale.unitPrice | number: '1.2-2' }}</td>
+        <td>{{ sale.totalAmount | number: '1.2-2' }}</td>
+        <td>{{ sale.saleDate | date: 'medium' }}</td>
+      </tr>
+      <tr *ngIf="sales.length === 0">
+        <td colspan="5" class="status-text">No sales recorded yet.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
