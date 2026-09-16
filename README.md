@@ -1,13 +1,12 @@
-# ABC Meditest — Medicine & Sales SPA
+ Medicine SPA
 
 A single-page app for managing medicine inventory and sale records.
 
-- **Backend:** ASP.NET Core 8 minimal Web API, data persisted to JSON files (no database).
-- **Frontend:** Angular 17 (standalone components), talks to the API over HTTP.
+- **Backend:** ASP.NET Core 8 minimal Web API, data persisted to JSON files .
+- **Frontend:** Angular 17 talks to the API over HTTP.
 
 ## Project structure
 
-```
 MeditestApp/
 ├── backend/
 │   └── MeditestApi/          .NET 8 Web API
@@ -74,10 +73,3 @@ This opens the SPA at **http://localhost:4200**, which calls the API at `http://
   submitting decrements stock and appends to the sale history table shown below.
 - **Search** — debounced search box filtering by name, brand or notes (good-to-have requirement).
 
-## Notes / things to adjust for production use
-
-- Data is stored as flat JSON files with a simple in-process lock — fine for a demo/small deployment,
-  not for concurrent multi-instance hosting. Swap `JsonFileStore<T>` for a real database if you need that.
-- The API origin is hardcoded to `http://localhost:5000` in the Angular services
-  (`src/app/services/*.service.ts`) — move this to `environment.ts` files if you need per-environment config.
-- No authentication is implemented; add it before exposing this beyond a local/demo environment.
